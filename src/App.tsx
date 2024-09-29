@@ -12,6 +12,11 @@ function App() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  async function createFile() {
+    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+    setGreetMsg(await invoke("createFile", {}));
+  }
+
   return (
     <div className="container">
       <h1>Welcome to Tauri!</h1>
@@ -29,6 +34,8 @@ function App() {
       </div>
 
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
+
+      <button onClick={() => { createFile(); }}>Create file</button>
 
       <form
         className="row"
