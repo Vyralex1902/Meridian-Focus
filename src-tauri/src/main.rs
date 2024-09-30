@@ -1,17 +1,18 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use std::io::Read;
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
-#[tauri::command]
-fn createFile() {
-    std::fs::File::create("newFile.txt").unwrap();
-    format!("File Created!")
-}
+// #[tauri::command]
+// fn init_check() {
+//     std::fs::File::read_to_string("newFile.txt");
+// }
 
 // use tauri::{CustomMenuItem, Menu, MenuItem, Submenu};
 

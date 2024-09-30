@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
@@ -7,19 +7,21 @@ function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
 
+  useEffect(() => {
+    async () => {
+      //Create a function that will read the config files and others
+
+    }
+  }, []);
+
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     setGreetMsg(await invoke("greet", { name }));
   }
 
-  async function createFile() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    setGreetMsg(await invoke("createFile", {}));
-  }
-
   return (
     <div className="container">
-      <h1>Welcome to Tauri!</h1>
+      <h1>Meridian Focus</h1>
 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
@@ -34,8 +36,6 @@ function App() {
       </div>
 
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <button onClick={() => { createFile(); }}>Create file</button>
 
       <form
         className="row"
