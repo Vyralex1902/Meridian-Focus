@@ -1,4 +1,3 @@
-// src/buttonCard.tsx
 import React from 'react';
 import "./App.css";
 
