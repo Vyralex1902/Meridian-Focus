@@ -1,10 +1,13 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#buttonCardContainer:hover {
+  border-color: #396cd8;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.8em #396cd8);
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
-}
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -22,28 +25,39 @@
 }
 
 .container {
+  width: 100vw;
+  height: 100%;
   margin: 0;
-  padding-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
+#gridWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.2fr 1fr;
+  grid-column-gap: 25px;
+  grid-row-gap: 10px;
 }
 
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
+#toolBtnsContainer1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+#toolBtnsContainer2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+#toolBtnsContainer3 {
+  grid-row: 1;
+  grid-column: 3;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
+.midWrapper {
+  grid-row: 2;
+  grid-column: 2;
 }
 
 a {
